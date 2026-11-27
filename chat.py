@@ -1,7 +1,7 @@
 import argparse
 
-from peer_client import PeerClient
-from peer_server import PeerServer, SharedState, enable_windows_ansi
+from client import PeerClient
+from server import PeerServer, SharedState, enable_windows_ansi
 
 
 def main():

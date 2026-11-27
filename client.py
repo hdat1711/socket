@@ -5,7 +5,7 @@ import sys
 import threading
 import time
 
-from peer_server import PeerServer, SharedState, format_size
+from server import PeerServer, SharedState, format_size
 
 if os.name == "nt":
     import msvcrt

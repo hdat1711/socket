@@ -267,7 +267,8 @@ class PeerServer:
                     self._on_chat_message(peer_name, payload)
 
                 elif msg_type == "FILE":
-                    filename = os.path.basename(recv_until_delim(conn))
+                    raw_name = recv_until_delim(conn) or "received_file"
+                    filename = os.path.basename(raw_name) or "received_file"
                     file_size = int(recv_until_delim(conn))
                     self._on_file_receive(conn, peer_name, filename, file_size)
                     break  # Mỗi file chạy trên một kết nối TCP riêng và đóng sau khi xong
